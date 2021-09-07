@@ -22,11 +22,17 @@ class ListTest {
 
     @Test
     void removeFromHead() {
-        list.insertFromTail(new Node("1"));
-        list.insertFromTail(new Node("2"));
-        list.insertFromTail(new Node("3"));
-        list.insertFromTail(new Node("4"));
+        assertEquals(null,list.removeFromHead());
+        Node n =new Node("1");
+        Node n1 = new Node("2");
+        Node n2 = new Node("3");
+        list.insertFromHead(n);
         assertEquals("1",list.removeFromHead().name);
+        list.insertFromHead(n1);
+        list.insertFromHead(n2);
+        assertEquals("3",list.removeFromHead().name);
+        assertEquals("1",list.removeFromTail().name);
+        System.out.println(list.printFromHead());
     }
 
     @Test
@@ -36,5 +42,23 @@ class ListTest {
         list.insertFromTail(new Node("3"));
         list.insertFromTail(new Node("4"));
         assertEquals("4",list.removeFromTail().name);
+    }
+
+    @Test
+    void printFromHead() {
+        list.insertFromTail(new Node("1"));
+        list.insertFromTail(new Node("2"));
+        list.insertFromTail(new Node("3"));
+        list.insertFromTail(new Node("4"));
+        System.out.println(list.printFromHead());
+    }
+
+    @Test
+    void printFromTail() {
+        list.insertFromTail(new Node("1"));
+        list.insertFromTail(new Node("2"));
+        list.insertFromTail(new Node("3"));
+        list.insertFromTail(new Node("4"));
+        System.out.println(list.printFromTail());
     }
 }

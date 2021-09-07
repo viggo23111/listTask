@@ -52,6 +52,26 @@ public class List {
         tail = tail.prev;
         return n;
     }
+    public String printFromHead() {
+
+        Node n = head;
+        String res="";
+        while(n!=null){
+            res=res + n.name;
+            n=n.next;
+        }
+        return res;
+    }
+
+    public String printFromTail() {
+        Node n = tail;
+        String res = "";
+        while (n != null) {
+            res = res + n.name;
+            n = n.prev;
+        }
+        return res;
+    }
     public boolean isEmpty(){
 
         return false;
