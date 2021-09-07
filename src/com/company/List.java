@@ -15,6 +15,7 @@ public class List {
         head=n;
         return head;
     }
+
     public Node insertFromTail(Node n){
         if (tail == null){
             head=n;
@@ -25,6 +26,36 @@ public class List {
         n.prev=tail;
         tail=n;
         return tail;
+    }
+
+    public Node removeFromHead() {
+        if (head == null){
+            return null;
+        }
+        if (head.equals(tail)){
+            return head;
+        }
+        Node n = head;
+        head.next.prev = null;
+        head = head.next;
+        return n;
+    }
+    public Node removeFromTail() {
+        if (head == null){
+            return null;
+        }
+        if (head.equals(tail)){
+            return head;
+        }
+        Node n = tail;
+        tail.prev.next = null;
+        tail = tail.prev;
+        return n;
+    }
+    public boolean isEmpty(){
+
+        return false;
+
     }
 }
 

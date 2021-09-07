@@ -19,4 +19,22 @@ class ListTest {
         Node node1 = new Node("1");
         assertEquals("1",list.insertFromTail(node1).name);
     }
+
+    @Test
+    void removeFromHead() {
+        list.insertFromTail(new Node("1"));
+        list.insertFromTail(new Node("2"));
+        list.insertFromTail(new Node("3"));
+        list.insertFromTail(new Node("4"));
+        assertEquals("1",list.removeFromHead().name);
+    }
+
+    @Test
+    void removeFromTail() {
+        list.insertFromTail(new Node("1"));
+        list.insertFromTail(new Node("2"));
+        list.insertFromTail(new Node("3"));
+        list.insertFromTail(new Node("4"));
+        assertEquals("4",list.removeFromTail().name);
+    }
 }
