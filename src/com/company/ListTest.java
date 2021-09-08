@@ -1,12 +1,21 @@
 package com.company;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListTest {
     List list = new List();
+    List list1 = new List();
 
+    @BeforeEach
+    void setUp() {
+        list1.insertFromTail(new Node("1"));
+        list1.insertFromTail(new Node("2"));
+        list1.insertFromTail(new Node("3"));
+        list1.insertFromTail(new Node("4"));
+    }
 
     @Test
     void insertFromHead() {
@@ -55,10 +64,6 @@ class ListTest {
 
     @Test
     void printFromTail() {
-        list.insertFromTail(new Node("1"));
-        list.insertFromTail(new Node("2"));
-        list.insertFromTail(new Node("3"));
-        list.insertFromTail(new Node("4"));
-        System.out.println(list.printFromTail());
+        System.out.println(list1.printFromTail());
     }
 }
