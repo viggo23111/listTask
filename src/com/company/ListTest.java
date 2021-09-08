@@ -11,6 +11,7 @@ class ListTest {
 
     @BeforeEach
     void setUp() {
+        list1.insertFromTail(new Node("0"));
         list1.insertFromTail(new Node("1"));
         list1.insertFromTail(new Node("2"));
         list1.insertFromTail(new Node("3"));
@@ -65,5 +66,33 @@ class ListTest {
     @Test
     void printFromTail() {
         System.out.println(list1.printFromTail());
+    }
+
+    @Test
+    void findNode() {
+        assertEquals("",list1.findNode("6").name);
+    }
+
+    @Test
+    void findNodeByIndex() {
+        System.out.println(list1.findNodeByIndex(1).name);
+    }
+
+    @Test
+    void removeFromList() {
+        assertEquals("1",list1.removeFromList("1").name);
+        System.out.println(list1.printFromHead());
+    }
+
+    @Test
+    void insertToList() {
+        Node nTest =new Node("9");
+        list1.insertToList(2,nTest);
+        System.out.println(list1.printFromHead());
+    }
+
+    @Test
+    void listSize() {
+        assertEquals(4,list1.listSize());
     }
 }
